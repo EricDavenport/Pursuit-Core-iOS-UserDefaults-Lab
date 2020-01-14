@@ -9,26 +9,28 @@
 /* Begin PBXBuildFile section */
 		586E5A1023CD11B400FA1F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A0F23CD11B400FA1F84 /* AppDelegate.swift */; };
 		586E5A1223CD11B400FA1F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A1123CD11B400FA1F84 /* SceneDelegate.swift */; };
-		586E5A1423CD11B400FA1F84 /* MyHoriscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A1323CD11B400FA1F84 /* MyHoriscopeViewController.swift */; };
+		586E5A1423CD11B400FA1F84 /* MyHoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A1323CD11B400FA1F84 /* MyHoroscopeViewController.swift */; };
 		586E5A1723CD11B400FA1F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586E5A1523CD11B400FA1F84 /* Main.storyboard */; };
 		586E5A1923CD11B500FA1F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586E5A1823CD11B500FA1F84 /* Assets.xcassets */; };
 		586E5A1C23CD11B500FA1F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586E5A1A23CD11B500FA1F84 /* LaunchScreen.storyboard */; };
 		586E5A2523CD124200FA1F84 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 586E5A2423CD124200FA1F84 /* NetworkHelper */; };
 		586E5A2A23CD145D00FA1F84 /* HoriscopeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A2923CD145D00FA1F84 /* HoriscopeAPIClient.swift */; };
 		586E5A2D23CD15B600FA1F84 /* HoriscopeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A2C23CD15B600FA1F84 /* HoriscopeInfo.swift */; };
+		58B3B12A23CD2E520099471E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3B12923CD2E520099471E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		586E5A0C23CD11B400FA1F84 /* Horoscopes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horoscopes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586E5A0F23CD11B400FA1F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		586E5A1123CD11B400FA1F84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		586E5A1323CD11B400FA1F84 /* MyHoriscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHoriscopeViewController.swift; sourceTree = "<group>"; };
+		586E5A1323CD11B400FA1F84 /* MyHoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHoroscopeViewController.swift; sourceTree = "<group>"; };
 		586E5A1623CD11B400FA1F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		586E5A1823CD11B500FA1F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		586E5A1B23CD11B500FA1F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		586E5A1D23CD11B500FA1F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		586E5A2923CD145D00FA1F84 /* HoriscopeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoriscopeAPIClient.swift; sourceTree = "<group>"; };
 		586E5A2C23CD15B600FA1F84 /* HoriscopeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoriscopeInfo.swift; sourceTree = "<group>"; };
+		58B3B12923CD2E520099471E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 		586E5A2823CD140A00FA1F84 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				586E5A1323CD11B400FA1F84 /* MyHoriscopeViewController.swift */,
+				586E5A1323CD11B400FA1F84 /* MyHoroscopeViewController.swift */,
+				58B3B12923CD2E520099471E /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -176,11 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				586E5A1423CD11B400FA1F84 /* MyHoriscopeViewController.swift in Sources */,
+				586E5A1423CD11B400FA1F84 /* MyHoroscopeViewController.swift in Sources */,
 				586E5A1023CD11B400FA1F84 /* AppDelegate.swift in Sources */,
 				586E5A2D23CD15B600FA1F84 /* HoriscopeInfo.swift in Sources */,
 				586E5A1223CD11B400FA1F84 /* SceneDelegate.swift in Sources */,
 				586E5A2A23CD145D00FA1F84 /* HoriscopeAPIClient.swift in Sources */,
+				58B3B12A23CD2E520099471E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

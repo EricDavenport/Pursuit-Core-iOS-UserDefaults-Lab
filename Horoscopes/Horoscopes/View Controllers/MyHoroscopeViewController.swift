@@ -8,19 +8,19 @@
 
 import UIKit
 
-class MyHoriscopeViewController: UIViewController {
+class MyHoroscopeViewController: UIViewController {
   
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var sunsignLabel: UILabel!
-  @IBOutlet weak var horiscopeLabel: UITextView!
+  @IBOutlet weak var horoscopeLabel: UITextView!
   @IBOutlet weak var moodLabel: UILabel!
   @IBOutlet weak var keywordsLabel: UILabel!
   @IBOutlet weak var intensityLabel: UILabel!
   @IBOutlet weak var creditLabel: UILabel!
   
-  //var yourSign: Signs
+  var userSign: String!
   
-  var horiscope: Horiscope! {
+  var horoscope: Horoscope! {
     didSet {
       DispatchQueue.main.async {
         self.updateUI()
@@ -30,28 +30,27 @@ class MyHoriscopeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    loadHoriscope()
-    // Do any additional setup after loading the view.
+    loadHoroscope()
   }
   
   func updateUI() {
-    dateLabel.text = horiscope.date
-    sunsignLabel.text = horiscope.sunsign
-    horiscopeLabel.text = horiscope.horoscope
-    moodLabel.text = horiscope.meta.mood
-    keywordsLabel.text = horiscope.meta.keywords.description
-    intensityLabel.text = horiscope.meta.intensity
-    creditLabel.text = horiscope.credit
+    dateLabel.text = horoscope.date
+    sunsignLabel.text = horoscope.sunsign
+    horoscopeLabel.text = horoscope.horoscope
+    moodLabel.text = horoscope.meta.mood
+    keywordsLabel.text = horoscope.meta.keywords.description
+    intensityLabel.text = horoscope.meta.intensity
+    creditLabel.text = horoscope.credit
   }
   
   
-  func loadHoriscope() {
-    HoriscopeAPIClient.getHoriscope(for: "gemini") { (result) in
+  func loadHoroscope() {
+    HoriscopeAPIClient.getHoroscope(for: userSign) { (result) in
       switch result {
       case .failure(let appError):
         print("\(appError)")
       case .success(let horiscope):
-        self.horiscope = horiscope
+        self.horoscope = horiscope
       }
     }
   }

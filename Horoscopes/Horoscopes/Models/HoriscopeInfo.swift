@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Signs {
+class Signs {
   let Aries: String = "aries"
   let Taurus: String = "taurus"
   let Gemini: String = "gemini"
@@ -23,7 +23,7 @@ struct Signs {
   let Pisces: String = "pisces"
 }
 
-struct Horiscope: Codable {
+struct Horoscope: Codable {
   let sunsign: String
   let credit: String
   let date: String
@@ -37,4 +37,6 @@ struct Meta: Codable {
   let intensity: String
 }
 
-
+extension Signs {
+//  func 
+}
