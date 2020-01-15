@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5hB-Ym-lhM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BcA-rL-iHN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -18,12 +18,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunsign Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-hR-sOB">
                                 <rect key="frame" x="8" y="113" width="398" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQf-vc-ObF">
-                                <rect key="frame" x="20" y="85" width="374" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,13 +64,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQf-vc-ObF">
+                                <rect key="frame" x="20" y="88" width="374" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gzZ-xq-MOz" secondAttribute="trailing" constant="20" id="1e2-rq-Oqh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QYh-4k-sXO" secondAttribute="trailing" constant="20" id="3TS-iK-zQF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6nx-Ai-uVj" secondAttribute="trailing" constant="20" id="9nC-iF-xkx"/>
-                            <constraint firstItem="HOt-hR-sOB" firstAttribute="top" secondItem="fQf-vc-ObF" secondAttribute="bottom" constant="10" id="AbO-uc-cqN"/>
+                            <constraint firstItem="HOt-hR-sOB" firstAttribute="top" secondItem="fQf-vc-ObF" secondAttribute="bottom" constant="7" id="AbO-uc-cqN"/>
                             <constraint firstItem="HOt-hR-sOB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Gmb-Sx-GdA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HOt-hR-sOB" secondAttribute="trailing" constant="8" id="Igf-IO-HDe"/>
                             <constraint firstItem="6nx-Ai-uVj" firstAttribute="top" secondItem="QYh-4k-sXO" secondAttribute="bottom" constant="35" id="Ipv-o4-b7o"/>
@@ -97,7 +97,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eRs-HW-4JQ"/>
+                    <navigationItem key="navigationItem" id="eRs-HW-4JQ">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="1kL-TL-xOp">
+                            <connections>
+                                <segue destination="vwi-hY-Yku" kind="presentation" id="zbN-2N-I2G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="creditLabel" destination="UGP-dD-Jw3" id="SjD-e7-940"/>
                         <outlet property="dateLabel" destination="fQf-vc-ObF" id="pTl-P9-eJf"/>
@@ -110,27 +116,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="4nc-pc-CgC">
             <objects>
                 <viewController id="vwi-hY-Yku" customClass="SettingsViewController" customModule="Horoscopes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lJv-87-fSK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAO-JZ-75k">
-                                <rect key="frame" x="47" y="222" width="320" height="216"/>
+                                <rect key="frame" x="47" y="134" width="320" height="216"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XfF-S9-TNK">
-                                <rect key="frame" x="20" y="138" width="374" height="34"/>
+                                <rect key="frame" x="20" y="50" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aBQ-vO-52L">
-                                <rect key="frame" x="47" y="518" width="320" height="254"/>
+                                <rect key="frame" x="47" y="430" width="320" height="288"/>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQh-LN-9qn">
+                                <rect key="frame" x="354" y="12" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="k5I-yB-fhB" kind="unwind" unwindAction="unwindSettingWithSegue:" id="z4V-pn-7S2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -147,12 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="AbG-it-Vba"/>
                     </view>
                     <navigationItem key="navigationItem" id="xyq-xN-ScE">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="7rU-x9-Kwx">
-                            <connections>
-                                <action selector="saveSettings:" destination="vwi-hY-Yku" id="PGd-X7-U62"/>
-                                <segue destination="BYZ-38-t0r" kind="show" id="yaE-ZC-edH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7rU-x9-Kwx"/>
                     </navigationItem>
                     <connections>
                         <outlet property="birthdayPicker" destination="aBQ-vO-52L" id="IOZ-3z-Mk2"/>
@@ -161,6 +170,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uan-5M-Md2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="k5I-yB-fhB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="868.52678571428567"/>
         </scene>
@@ -182,5 +192,27 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="868.52678571428567"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uqs-Nx-fw6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BcA-rL-iHN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bIZ-Jt-OeH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xOz-Yw-tFC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uD1-gm-FBy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kj4-qu-BYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zbN-2N-I2G"/>
+    </inferredMetricsTieBreakers>
 </document>

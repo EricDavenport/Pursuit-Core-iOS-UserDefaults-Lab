@@ -18,12 +18,15 @@ class MyHoroscopeViewController: UIViewController {
   @IBOutlet weak var intensityLabel: UILabel!
   @IBOutlet weak var creditLabel: UILabel!
   
-  var userSign: String!
+  var userSign: Signs?
+  var userName: String?
   
   var horoscope: Horoscope! {
     didSet {
       DispatchQueue.main.async {
         self.updateUI()
+        UserPreferences.shared.updateHoroscope(with: self.userSign!)
+
       }
     }
   }
@@ -33,7 +36,23 @@ class MyHoroscopeViewController: UIViewController {
     loadHoroscope()
   }
   
+  @IBAction func unwindSetting(segue: UIStoryboardSegue) {
+    guard let saveChanges = segue.source as? SettingsViewController,
+      let signString = saveChanges.selectedSign else {
+        fatalError("unwind segue failed")
+    }
+    userSign = signString
+    loadHoroscope()
+  }
+  
   func updateUI() {
+    
+    if let sign = UserPreferences.shared.getHoroscope() {
+      userSign = sign
+    }
+    
+    
+    navigationItem.title = "\(userName)'s Daily Horoscope"
     dateLabel.text = horoscope.date
     sunsignLabel.text = horoscope.sunsign
     horoscopeLabel.text = horoscope.horoscope
@@ -45,7 +64,7 @@ class MyHoroscopeViewController: UIViewController {
   
   
   func loadHoroscope() {
-    HoriscopeAPIClient.getHoroscope(for: userSign) { (result) in
+    HoriscopeAPIClient.getHoroscope(for: userSign?.rawValue ?? "gemini") { (result) in
       switch result {
       case .failure(let appError):
         print("\(appError)")

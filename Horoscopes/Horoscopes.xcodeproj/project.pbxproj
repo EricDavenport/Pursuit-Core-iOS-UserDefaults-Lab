@@ -16,6 +16,7 @@
 		586E5A2523CD124200FA1F84 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 586E5A2423CD124200FA1F84 /* NetworkHelper */; };
 		586E5A2A23CD145D00FA1F84 /* HoriscopeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A2923CD145D00FA1F84 /* HoriscopeAPIClient.swift */; };
 		586E5A2D23CD15B600FA1F84 /* HoriscopeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5A2C23CD15B600FA1F84 /* HoriscopeInfo.swift */; };
+		58AD998723CE719600BD1804 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD998623CE719600BD1804 /* UserPreferences.swift */; };
 		58B3B12A23CD2E520099471E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3B12923CD2E520099471E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		586E5A1D23CD11B500FA1F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		586E5A2923CD145D00FA1F84 /* HoriscopeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoriscopeAPIClient.swift; sourceTree = "<group>"; };
 		586E5A2C23CD15B600FA1F84 /* HoriscopeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoriscopeInfo.swift; sourceTree = "<group>"; };
+		58AD998623CE719600BD1804 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		58B3B12923CD2E520099471E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				586E5A1323CD11B400FA1F84 /* MyHoroscopeViewController.swift */,
+				58AD998623CE719600BD1804 /* UserPreferences.swift */,
 				58B3B12923CD2E520099471E /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				586E5A1423CD11B400FA1F84 /* MyHoroscopeViewController.swift in Sources */,
+				58AD998723CE719600BD1804 /* UserPreferences.swift in Sources */,
 				586E5A1023CD11B400FA1F84 /* AppDelegate.swift in Sources */,
 				586E5A2D23CD15B600FA1F84 /* HoriscopeInfo.swift in Sources */,
 				586E5A1223CD11B400FA1F84 /* SceneDelegate.swift in Sources */,

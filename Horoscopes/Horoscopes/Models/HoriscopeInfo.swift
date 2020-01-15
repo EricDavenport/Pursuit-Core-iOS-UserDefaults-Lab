@@ -8,21 +8,6 @@
 
 import Foundation
 
-class Signs {
-  let Aries: String = "aries"
-  let Taurus: String = "taurus"
-  let Gemini: String = "gemini"
-  let Cancer: String = "cancer"
-  let Leo: String = "leo"
-  let Virgo: String = "virgo"
-  let Libra: String = "libra"
-  let Scorpio: String = "scorpio"
-  let Sagittarius: String = "sagittarius"
-  let Capricorn: String = "capricorn"
-  let Aquarius: String = "aquarius"
-  let Pisces: String = "pisces"
-}
-
 struct Horoscope: Codable {
   let sunsign: String
   let credit: String
@@ -37,6 +22,4 @@ struct Meta: Codable {
   let intensity: String
 }
 
-extension Signs {
-//  func 
-}
+

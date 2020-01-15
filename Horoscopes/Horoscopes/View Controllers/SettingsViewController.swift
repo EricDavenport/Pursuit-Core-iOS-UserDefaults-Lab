@@ -9,52 +9,29 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+  
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var signPicker: UIPickerView!
   
   @IBOutlet weak var birthdayPicker: UIDatePicker!
   
-  var signs: [String] = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn","Aquarius", "Pisces" ]
-  var selectedSign: String = ""
+  var signssss: [Signs] = [.Aries, .Taurus, .Gemini, .Cancer, .Leo, .Virgo, .Libra, .Scorpio, .Sagittarius, .Capricorn, .Aquarius, .Pisces]
+  var selectedSign: Signs?
   var horoscope: Horoscope!
-//  var signOne: Signs!
+  var userName: String?
+  
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-
+    super.viewDidLoad()
     
+    nameTextField.delegate = self
     signPicker.delegate = self
     signPicker.dataSource = self
-    }
-    
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //stringToHoroscope()
-    
-    guard let horoscopeVC = segue.destination as? MyHoroscopeViewController else {
-      return
-    }
-    
-    horoscopeVC.userSign = selectedSign.lowercased()
   }
   
-  @IBAction func saveSettings(_ sender: UIBarButtonItem) {
-    //stringToHoroscope()
-  }
-  func stringToHoroscope() {
-    HoriscopeAPIClient.getHoroscope(for: selectedSign.lowercased()) { (result) in
-      switch result {
-      case .failure(let appError):
-        print("\(appError)")
-      case .success(let horiscope):
-        self.horoscope = horiscope
-      }
-    }
-    
-    
-    }
-  }
-    
+}
+
+
 
 
 extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -62,14 +39,20 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     1
   }
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    signs.count
+    signssss.count
   }
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     
-    return signs[row]
+    return signssss[row].rawValue
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    selectedSign = signs[row]
+    selectedSign = signssss[row]
+  }
+}
+
+extension SettingsViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    resignFirstResponder()
   }
 }
