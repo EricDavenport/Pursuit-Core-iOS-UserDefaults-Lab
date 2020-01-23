@@ -37,10 +37,11 @@ class UserPreferences {
   
   static let shared = UserPreferences()
   
+  // storing horoscope
   func updateHoroscope(with sign: Signs) {
     UserDefaults.standard.set(sign.rawValue, forKey: UserPreferenceKey.horoscopeString)
   }
-  
+  // retrieve horoscope
   func getHoroscope() -> Signs? {
     guard let sign = UserDefaults.standard.object(forKey: UserPreferenceKey.horoscopeString) as? String else {
       return nil

@@ -29,6 +29,17 @@ class SettingsViewController: UIViewController {
     signPicker.dataSource = self
   }
   
+  @IBAction func saveButtonPressed(_ sender: UIButton) {
+    
+  }
+  
+  private func showHoroscope(horoscope: Horoscope) {
+//    guard let horoscopeController = storyboard?.instantiateViewController(identifier: "HoroscopeVC") as? MyHoroscopeViewController else {
+//      fatalError("filed to downcast to HoroscopeVC")
+//      showHoroscope(horoscope: selectedSign)
+//    }
+  }
+  
 }
 
 
