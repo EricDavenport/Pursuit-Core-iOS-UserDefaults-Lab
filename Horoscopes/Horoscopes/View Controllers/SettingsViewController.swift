@@ -33,7 +33,9 @@ class SettingsViewController: UIViewController {
   
   @IBAction func saveButtonPressed(_ sender: UIButton) {
     UserPreferences.shared.updateHoroscope(with: selectedSign ?? .Aries)
-    
+//    if nameTextField.text == nil {
+//    UserPreferences.shared.updateUserName(with: nameTextField.text ?? "New User")
+//    }
     dismiss(animated: true)
 
   }
