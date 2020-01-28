@@ -166,7 +166,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="birthdayPicker" destination="aBQ-vO-52L" id="IOZ-3z-Mk2"/>
-                        <outlet property="nameTextField" destination="XfF-S9-TNK" id="Cvi-xE-4Ly"/>
+                        <outlet property="nameTextField" destination="XfF-S9-TNK" id="SCb-xU-0kD"/>
                         <outlet property="signPicker" destination="nAO-JZ-75k" id="0Sk-dL-TQI"/>
                     </connections>
                 </viewController>

@@ -11,14 +11,16 @@ import UIKit
 class SettingsViewController: UIViewController {
   
   @IBOutlet weak var nameTextField: UITextField!
+  
   @IBOutlet weak var signPicker: UIPickerView!
   
   @IBOutlet weak var birthdayPicker: UIDatePicker!
   
+  
   var signssss: [Signs] = [.Aries, .Taurus, .Gemini, .Cancer, .Leo, .Virgo, .Libra, .Scorpio, .Sagittarius, .Capricorn, .Aquarius, .Pisces]
   var selectedSign: Signs?
   var horoscope: Horoscope!
-  var userName: String?
+  var userName: String? 
   
   
   override func viewDidLoad() {
@@ -30,14 +32,10 @@ class SettingsViewController: UIViewController {
   }
   
   @IBAction func saveButtonPressed(_ sender: UIButton) {
+    UserPreferences.shared.updateHoroscope(with: selectedSign ?? .Aries)
     
-  }
-  
-  private func showHoroscope(horoscope: Horoscope) {
-//    guard let horoscopeController = storyboard?.instantiateViewController(identifier: "HoroscopeVC") as? MyHoroscopeViewController else {
-//      fatalError("filed to downcast to HoroscopeVC")
-//      showHoroscope(horoscope: selectedSign)
-//    }
+    dismiss(animated: true)
+
   }
   
 }
@@ -59,11 +57,16 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     selectedSign = signssss[row]
+    //UserPreferences.shared.updateHoroscope(with: selectedSign!)
   }
 }
 
 extension SettingsViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     resignFirstResponder()
+    userName = textField.text
+    UserPreferences.shared.updateUserName(with: userName ?? "")
+    return true
   }
 }
+

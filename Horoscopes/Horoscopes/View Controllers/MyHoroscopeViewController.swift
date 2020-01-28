@@ -23,7 +23,11 @@ class MyHoroscopeViewController: UIViewController {
       loadHoroscope()
     }
   }
-  var userName: String?
+  var userName = UserPreferences.shared.getUsername() {
+    didSet {
+      navigationItem.title = "\(String(describing: userName))'s Daily Horoscope"
+    }
+  }
   
   var horoscope: Horoscope! {
     didSet {
@@ -45,6 +49,10 @@ class MyHoroscopeViewController: UIViewController {
     
     if let sign = UserPreferences.shared.getHoroscope() {
       userSign = sign
+    }
+    if let user = UserPreferences.shared.getUsername() {
+      navigationItem.title = "\(user)'s Daily Horoscope"
+
     }
     
     
